@@ -13,7 +13,7 @@ export const Counter = () => {
 
   return (
     <>
-        <div>Counter: useState</div>
+        <div>Counter: </div>
         <span>valor: {counter} </span>
         <br />
         <button 

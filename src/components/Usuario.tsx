@@ -16,11 +16,14 @@ export const Usuario = () => {
             name : 'LF'
         })
     }
+    const logout = () => {
+        //averiguar
+    }
 
 
 return (
     <div className="mt-5">
-        <h3>Usuario: useState</h3>
+        <h3>Usuario</h3>
 
         <button
             onClick={ login }
@@ -29,11 +32,18 @@ return (
             Login
 
         </button>
+        <button
+            onClick={ logout }
+            className="btn btn-outline-primary"
+        >
+            Logout
+
+        </button>
 
         {
             (!user)
                 ? <h4>No hay usuario</h4>
-                : <pre> { JSON.stringify( user ) } </pre>
+                : <h2><pre> { JSON.stringify( user ) } </pre></h2>
         }
     </div>
 )
