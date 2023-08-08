@@ -1,23 +1,39 @@
+
 import { useState } from "react"
 
 interface User {
     uid: string;
     name: string,
+    logged: boolean
 }
+
+
 
 
 export const Usuario = () => {
 
-    const [user, setuser] = useState<User>()
+    const [user, setuser] = useState<User>({
+        uid: '',
+        name: '',
+        logged: false
+    })
 
     const login = () => {
         setuser({
             uid: 'abc123',
-            name : 'LF'
+            name : 'LF',
+            logged: true
         })
     }
+
+    //Mi solucion
     const logout = () => {
-        //averiguar
+        setuser({
+            uid: '',
+            name : '',
+            logged: false
+        })
+                 
     }
 
 
@@ -34,15 +50,15 @@ return (
         </button>
         <button
             onClick={ logout }
-            className="btn btn-outline-primary"
+            className="btn btn-outline-danger"
         >
             Logout
 
         </button>
 
         {
-            (!user)
-                ? <h4>No hay usuario</h4>
+            (!user.logged)
+                ? <h4>No hay usuario </h4>
                 : <h2><pre> { JSON.stringify( user ) } </pre></h2>
         }
     </div>
